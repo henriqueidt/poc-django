@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block pageName %}
+Template Test
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for item in list %}
+        <li>
+            {% if item.count > 1 %}
+                There are {{ item.count }}
+            {% elif item.count == 0 %}
+                There's no
+            {% else %}
+                There is only one
+            {% endif %}
+            {{item.name}}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
